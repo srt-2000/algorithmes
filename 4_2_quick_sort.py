@@ -1,3 +1,22 @@
+class QuickSort:
+    def sorted(self, arr):
+        if len(arr) < 2:
+            return arr
+        else:
+            pivot = arr[int(len(arr) / 2)]
+            less = [i for i in arr if i < pivot]
+            greater = [i for i in arr if i > pivot]
+            return self.sorted(less) + [pivot] + self.sorted(greater)
+
+print("Hello!\nI'm the quick sort function with recursion algorithm.")
+a = [int(n) for n in input("\nEnter the list you want to sort:").split()]
+b = QuickSort()
+print(f"Here is your sorted array:", b.sorted(a))
+
+
+#original code
+'''
+#O(nlog_n)
 def quick_sort(arr):
     if len(arr) < 2:
         return arr
@@ -6,6 +25,4 @@ def quick_sort(arr):
         less = [i for i in arr if i < pivot]
         greater = [i for i in arr if i > pivot]
         return quick_sort(less) + [pivot] + quick_sort(greater)
-
-a = [2, 4, 1, 6, 7, 9, 11, 12]
-print(quick_sort(a))
+'''
