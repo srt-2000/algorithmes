@@ -1,3 +1,15 @@
+class PathFinder:
+    def __init__(self):
+        self.postman_path = []
+        self.distance = 0
+
+    def find_postman_path(self, street_gr):
+        for i in street_gr:
+            self.postman_path.append(min(street_gr[i], key=street_gr[i].get))
+            self.distance += min(street_gr[i].values())
+        print(f"optimal postman path is {self.postman_path} with distance {self.distance} km")
+
+#In: street graph
 street = {}
 
 street["h1"] = {}
@@ -22,6 +34,14 @@ street["h4"]["h4-h3"] = street["h3"]["h3-h4"]
 
 for key, value in street.items():
     print("distance from house", key, value)
+#Out
+b = PathFinder()
+b.find_postman_path(street)
+
+#original code
+"""
+for key, value in street.items():
+    print("distance from house", key, value)
 
 def find_postman_path(street):
     postman_path = []
@@ -32,3 +52,4 @@ def find_postman_path(street):
     print("optimal postman path is", postman_path, "with distance", distance, "km")
 
 find_postman_path(street)
+"""
