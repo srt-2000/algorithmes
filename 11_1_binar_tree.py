@@ -6,7 +6,7 @@ class TreeNode:
 
 def pre_order(node):
     if node:
-        print(node.node)
+        print(node.node, end = ' ')
         pre_order(node.left)
         pre_order(node.right)
 
@@ -14,12 +14,12 @@ def post_order(node):
     if node:
         post_order(node.left)
         post_order(node.right)
-        print(node.node)
+        print(node.node, end = ' ')
 
 def in_order(node):
     if node:
         in_order(node.left)
-        print(node.node)
+        print(node.node, end = ' ')
         in_order(node.right)
 
 Tree = TreeNode(1)
@@ -30,9 +30,9 @@ Tree.left.right = TreeNode(5)
 Tree.right.left = TreeNode(6)
 Tree.right.right = TreeNode(7)
 
-print("Binar-Tree parsing: Pre-order type")
+print("\nBinar-Tree Pre-order parsing:")
 pre_order(Tree)
-print("Binar-Tree parsing: Post-order")
+print("\nBinar-Tree Post-order parsing:")
 post_order(Tree)
-print("Binar-Tree parsing: In-order")
+print("\nBinar-Tree In-order parsing")
 in_order(Tree)
