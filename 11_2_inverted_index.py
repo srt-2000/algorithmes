@@ -1,3 +1,17 @@
+class WordFinder:
+
+    def __init__(self):
+        self.word_table = {}
+        self.word = None
+
+    def find_world(self, word, word_table):
+        self.word = word
+        self.word_table = word_table
+        if self.word in self.word_table:
+            print("this world is on page -", self.word_table[self.word])
+        if self.word not in self.word_table:
+            print("there is no this word on our pages, sorry")
+
 inv_hash = {
     "hi": ["a", "b"],
     "there": ["a", "c"],
@@ -5,15 +19,12 @@ inv_hash = {
     "we": "c",
     "go": "c"
 }
-print(inv_hash)
 
 a = "hi there"
 b = "hi adit"
 c = "there we go"
 
-d = input()
-def find_world(d):
-    if d in inv_hash:
-        print("this world is on page -", inv_hash[d])
-
-find_world(d)
+print(f"Hi, I'm inverted index algorithm. We have \npage a with phrase:{a}\npage b with phrase:{b}\npage c with phrase:{c}")
+d = input("Input word from phrases and fin the pages:")
+f = WordFinder()
+f.find_world(d, inv_hash)

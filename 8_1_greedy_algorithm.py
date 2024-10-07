@@ -9,6 +9,7 @@ class PathFinder:
             self.distance += min(street_gr[i].values())
         print(f"optimal postman path is {self.postman_path} with distance {self.distance} km")
 
+#original code
 #In: street graph
 street = {}
 
