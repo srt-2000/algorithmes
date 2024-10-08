@@ -20,7 +20,7 @@ def generate_sine_wave(freq, sample_rate_, duration_):
     return x_, y_
 
 #generate 2 Hz 5 sec wave
-print("First of all we create 2Hz 5 sec wave, with inlet data duration = 5, sample wave = 44100 Hz.\nLook on the figure 1, then press X.")
+print("First of all we create 2Hz 5 sec wave, with inlet data duration = 5, sample wave = 44100 Hz.\nLook on the figure 1, then click X.")
 x, y = generate_sine_wave(2, sample_rate, duration)
 #print the figure of signal
 plt.plot(x, y)
@@ -29,7 +29,7 @@ plt.ylabel("Frequency, Hz")
 plt.suptitle('Created signal')
 plt.show()
 
-print("\nNext mixing and normalising the signals and write in into audio file.\nLook on the figure 2, then press X.\nFind the audio in this repo.")
+print("\nNext mixing and normalising the signals and write in into audio file.\nLook on the figure 2, then click X.\nFind the audio in this repo.")
 #mixing and normalising the audio signals
 _, nice_tone = generate_sine_wave(400, sample_rate, duration)
 _, noise_tone = generate_sine_wave(4000, sample_rate, duration)
@@ -43,7 +43,7 @@ plt.show()
 #write signal audio
 write("mysinewave.wav", sample_rate, normalized_tone)
 
-print("\nNext we start Fourier convertion to make the signal frequency spectrum.\nLook on the figure 3, then press X.")
+print("\nNext we start Fourier convertion to make the signal frequency spectrum.\nLook on the figure 3, then click X.")
 #Fourier convertion to make the signal frequency spectrum
 N = sample_rate * duration
 yf = rfft(normalized_tone)
@@ -53,7 +53,7 @@ plt.plot(xf, np.abs(yf))
 plt.suptitle('Signal frequency spectrum')
 plt.show()
 
-print("\nNext we make filtration of frequency spectrum.\nLook on the figure 4, then press X.")
+print("\nNext we make filtration of frequency spectrum.\nLook on the figure 4, then click X.")
 #filtration
 points_per_freq = len(xf) / (sample_rate / 2)
 target_idx = int(points_per_freq * 4000)
@@ -63,7 +63,7 @@ plt.plot(xf, np.abs(yf))
 plt.suptitle('Filtered signal frequency spectrum')
 plt.show()
 
-print("\nNext we invert Fourier convertion.\nLook on the figure 5, then press X.")
+print("\nNext we invert Fourier convertion.\nLook on the figure 5, then click X.")
 #invert convertion
 new_sig = irfft(yf)
 #print inverted spectrum

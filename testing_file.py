@@ -1,6 +1,3 @@
-a =[3, 4, 5, 7,]
-b = [a]
-print(b)
-n = b.pop(0)
-print(n)
+a =[1, 2, 3, 4]
+print(list(map(lambda x: x ** 2, a)))
 #TESTTESTTEST
