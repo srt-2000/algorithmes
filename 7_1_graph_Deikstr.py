@@ -2,16 +2,16 @@ class BestPath:
 
     def __init__(self):
         self.processed = []
-        self.lower_cost = float("inf")
-        self.lower_cost_node = None
 
     def find_lower_costs_node(self, costs_gr):
+        lower_cost = float("inf")
+        lower_cost_node = None
         for node in costs_gr:
             cost = costs_gr[node]
-            if cost < self.lower_cost and node not in self.processed:
-                self.lower_cost = cost
-                self.lower_cost_node = node
-        return self.lower_cost_node
+            if cost < lower_cost and node not in self.processed:
+                lower_cost = cost
+                lower_cost_node = node
+        return lower_cost_node
 
     def dsa(self, graph_gr, costs_gr, parents_gr):
         node = self.find_lower_costs_node(costs_gr)
@@ -53,9 +53,10 @@ parents["fin"] = None
 # =====end parents===
 
 a = BestPath()
-print(a.dsa(graph, costs, parents))
-#print("We have a graph with different paths to get our point:\n",graph,"\n")
-#print("I've used the DSA Dijkstra's Algorithm\nand found our minimal trip:", ['start'] + processed[:(processed.index("fin") + 1):])
+path = a.dsa(graph, costs, parents)
+
+print("We have a graph with different paths to get our point:\n",graph,"\n")
+print("I've used the DSA Dijkstra's Algorithm\nand found our minimal trip:", ['start'] + path[:(path.index("fin") + 1):])
 
 '''
 #original code
