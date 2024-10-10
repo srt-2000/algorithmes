@@ -15,15 +15,3 @@ print("Hello!\nI'm the countdown function with recursion algorithm\n")
 a = int(input("Enter the countdown range: "))
 c = CountDown()
 c.down_row(a)
-
-#original code
-'''
-def countdown(i):
-    print(i)
-    if i <= 0:
-        return i
-    else:
-        countdown(i - 1)
-
-countdown(10)
-'''

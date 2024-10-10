@@ -1,3 +1,5 @@
+import json
+
 class BestPath:
 
     def __init__(self):
@@ -27,30 +29,13 @@ class BestPath:
             node = self.find_lower_costs_node(costs_gr)
         return self.processed
 
-graph = {}
-graph["start"] = {}
-graph["start"]["a"] = 6
-graph["start"]["b"] = 2
-graph["a"] = {}
-graph["a"]["fin"] = 1
-graph["b"] = {}
-graph["b"]["a"] = 3
-graph["b"]["fin"] = 5
-graph["fin"] = {}
-# ====end graph======
-
-costs = {}
-costs["a"] = 6
-costs["b"] = 2
-infinity = float("inf")
-costs["fin"] = infinity
-# ====end costs======
-
-parents = {}
-parents["a"] = "start"
-parents["b"] = "start"
-parents["fin"] = None
-# =====end parents===
+with open("data/7_1_graph_data.json", "r") as file1:
+    graph = json.load(file1)
+with open("data/7_1_costs_data.json", "r") as file2:
+    costs = json.load(file2)
+costs["fin"] = float("inf")
+with open("data/7_1_parents_data.json", "r") as file3:
+    parents = json.load(file3)
 
 a = BestPath()
 path = a.dsa(graph, costs, parents)

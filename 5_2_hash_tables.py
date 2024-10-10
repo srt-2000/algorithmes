@@ -1,3 +1,5 @@
+import json
+
 class CashTest:
 
     def __init__(self):
@@ -13,7 +15,8 @@ class CashTest:
             print("It's a server side response")
             return self.data
 
-page = {"url1": "test1", "url2": "test2", "url3": "test3"}
+with open("data/5_2_data.json", "r") as file:
+    page = json.load(file)
 cache = {}
 print("You have urls:", list(page.keys()), "\nYou have 6 attempts. \nInput your url to make a CASH test:")
 tester = CashTest()

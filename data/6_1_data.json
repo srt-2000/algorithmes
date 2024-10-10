@@ -1,0 +1,12 @@
+{
+  "you": ["Viva", "Max", "Demon"],
+  "Viva": ["Leo", "Alex"],
+  "Max": ["Denis", "Dima"],
+  "Demon": ["Ann"],
+  "Leo": [],
+  "Alex": [],
+  "Denis": ["Andrey-m"],
+  "Dima": [],
+  "Ann": [],
+  "Andrey": []
+}

@@ -10,13 +10,3 @@ box = [int(n) for n in input("\nEnter the list numbers you want to create:").spl
 key = int(input("\nEnter the number you want to find position:"))
 f = KeyFinder()
 print(f"The position of {key} is:",f.find_key(box, key))
-
-#original codeS
-'''
-def find_key(box, key):
-    if key in box:
-        print(box.index(key))
-    else:
-        find_key(box, key)
-'''
-

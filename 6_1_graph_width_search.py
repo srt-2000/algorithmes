@@ -1,4 +1,5 @@
 from collections import deque
+import json
 
 class MSearcher:
 
@@ -29,8 +30,8 @@ class MSearcher:
         print(f"There are not mango-sellers in {self.name}s friends circle")
         return False
 
-graph = {"you": ["Viva", "Max", "Demon"], "Viva": ["Leo", "Alex"], "Max": ["Denis", "Dima"], "Demon": ["Ann"],
-         "Leo": [], "Alex": [], "Denis": ["Andrey-m"], "Dima": [], "Ann": [], "Andrey": []}
+with open('data/6_1_data.json', 'r') as data:
+    graph = json.load(data)
 
 print("Hello!\nI'm a finder if a mango-seller (name has 'm' at tne end) in friends circle.\nPlease, have a look on this graph.\n")
 print(graph, "\n\nAnd write the name you want to check.")
