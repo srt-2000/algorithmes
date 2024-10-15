@@ -1,8 +1,7 @@
 import json
 
-# Open and read the JSON file
-with open('data/9_1_data.json', 'r') as file:
-    parents = json.load(file)
+with open("data/10_1_data.json", "r") as file:
+    bread_stat = json.load(file)
+bread_stat = {int(k):v for k,v in bread_stat.items()}
 
-# Print the data
-print(parents)
+print(bread_stat)

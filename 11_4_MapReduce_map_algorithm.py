@@ -1,3 +1,6 @@
+import json
+
+
 class Sqr:
 
     def __init__(self):
@@ -7,6 +10,8 @@ class Sqr:
         self.result = map(lambda x: x ** 2, a_)
         return list(self.result)
 
-a = [1, 2, 3 , 4, 5]
+with open("data/11_4_data.json", "r") as file:
+    a = json.load(file)
+
 b = Sqr()
 print(f"A map function.\nWe have an array:{a}\nAnd we've powered every element:{b.sqr_arr(a)}")

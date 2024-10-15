@@ -1,3 +1,5 @@
+import json
+
 class WordFinder:
 
     def __init__(self):
@@ -12,13 +14,8 @@ class WordFinder:
         if self.word not in self.word_table:
             print("there is no this word on our pages, sorry")
 
-inv_hash = {
-    "hi": ["a", "b"],
-    "there": ["a", "c"],
-    "adit": "b",
-    "we": "c",
-    "go": "c"
-}
+with open("data/11_2_data.json", "r") as file:
+    inv_hash = json.load(file)
 
 a = "hi there"
 b = "hi adit"
